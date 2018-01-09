@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<base href="http://wx.sxjzcm.cn/mobile/xhshakev2/" />
+        <meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);
+		</script>
+		<title></title>
+<!-- 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" />
+		<link rel="stylesheet" href="css/sweetalert.css" / > -->
+		<link rel="stylesheet" href="css/style.css" / >
+    </head>
+   <body>
+		<!--初始页面-->
+		<div class="container" id="fc">
+			<div class="page" id="page1">
+				<div class="col-xs-12" id="p1_bottom"  style="display:none;">
+					<div id="page1Bottom">
+						<div class="pageText">
+							<input type="text" class="form-control" id="inputCode" placeholder="请输入兑换码"/>
+						</div>
+						<div class="pageCommit">点击兑换</div>
+					</div>
+				</div>
+				<div id="saoImg" style="display: none;">
+					<img src="http://pic.sxjzcm.cn/o_1ap7nuvfvqe11v6p1jpc8ou1qjn9.png?imageView2/4/w/1720/h/1080/q/75"  />
+				</div>
+				<div id="clickForReward"  style="display: none;">
+					点击兑换
+				</div>
+				<div class="export">©聚众科技 | 服务热线：400-6129-589</div>
+		</div>
+		<!--<div class="myopacity"></div>
+	<div class="mywindows">
+        <a href="javascript:;">
+            <div class="myclose"><img src="img/close.png"></div>
+        </a>
+    </div>-->
+     <div id="waiting">
+    		<div>处理中……</div>
+	</div>
+    <div id="beginReward">
+	    <div class="beginOpacity"></div>
+		<div class="beginWindows">
+			<div class="beginClose">
+				<img  src="http://pic.sxjzcm.cn/o_1aubr60q31n401h1r1o5776g1rjl9.png?imageView2/4/w/1720/h/1080/q/70"/>
+			</div>
+			<div class="beginListContainer"></div>
+	    </div>
+    </div>
+  
+		</div>
+		<div id="aPage" class="page">
+			
+		</div>
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js" ></script>
+		<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/shareUrl.js" ></script>
+		<script type="text/javascript" src="js/request.js"></script>
+		<script type="text/javascript" src="js/sweetalert.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Qq7gYHPmv9YrUPKgYaAcnBtn"></script>
+		<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+		<script type="text/javascript" src="js/js.js" ></script>
+        <script>
+        	var GLOBAL = {}; 
+        	GLOBAL.keywords = "";//兑换码
+	        GLOBAL.path = 'http://'+document.location.hostname+'/';
+			GLOBAL.activityId = null;
+			GLOBAL.user = null;
+			GLOBAL.activity = {};//存储活动信息
+			GLOBAL.record_id = null;
+			GLOBAL.p5_click = false;
+			GLOBAL.redpaperFlag = false;
+			GLOBAL.appid = null;//先获取activity,然后用activity获取appid
+			GLOBAL.get = null;
+			GLOBAL.cardExt = null;
+			GLOBAL.shareUrl = null;
+			GLOBAL.getCard = false;
+			GLOBAL.into = false;
+			GLOBAL.lat = "";
+			GLOBAL.lng = "";
+			GLOBAL.times = 1;
+			GLOBAL.codeReward = {};
+			GLOBAL.errorNum = 0;
+			GLOBAL.list = {};
+			GLOBAL.myReward = {};
+			GLOBAL.endPageRewardList = {};
+			GLOBAL.FinalShareTitle = "";
+			GLOBAL.FinalShareDesc = "";
+			GLOBAL.FinalShareLink = "";
+			GLOBAL.FinalShareImgUrl = "";
+			GLOBAL.FinalShareType = "";
+			GLOBAL.FinalShareDateUrl = "";
+			$(document).ready(function(){
+//				$("#page1").height($(window).height());
+				$(".page").height($(document.body).height());
+				$("#p1_bottom").height($(window).height()*0.08);
+				$(".pageText").height($(".page1Bottom").height());
+				$("#inputCode").change(function(){
+					GLOBAL.into = false;		
+				});
+			});
+        </script>
+	</body>
+</html>

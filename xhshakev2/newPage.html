@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" />
+		<link rel="stylesheet" href="css/sweetalert.css" / >
+		<link rel="stylesheet" href="css/sweetalert.css" />
+		<link rel="stylesheet" href="css/newPage.css" />
+    </head>
+   <body>
+   		<!--备用提示页面-->
+   		<div class="page" id="errorPage">
+   			<div class="tip2">
+				<h2>抱歉！</h2>
+				<h2 id="errmsg"></h2>
+				<h2>轻触页面继续...</h2>
+			</div>
+			<div class="export">©聚众科技 | 服务热线：400-6129-589</div>
+   		</div>
+		<!--摇奖页面-->
+		<div class="page" id="page2"><div class="contain p2_con"><audio id= "shakeMusic" src="" controls="true" hidden="true"></audio></div><div class="export">©聚众科技 | 服务热线：400-6129-589</div></div>
+		<!--红包页面-->
+		<div class="page" id="page3"><div class="contain p3_con">
+			<div class="stage">
+		<div class="reward">
+			<br>
+			<h2>恭喜你获得</h2>
+			<h3></h3>
+		</div>
+		<div class="top"></div>
+		<div class="outer">
+			<div class="circle"></div>
+			<div class="button">点击拆红包</div>
+		</div>
+	</div>
+		</div><div class="export">©聚众科技 | 服务热线：400-6129-589</div></div>
+		<!--卡券页面-->
+		<div class="page" id="page4">
+			<div id="showout">
+				<h3>恭喜获得卡券奖励，点我领取^_^</h3>
+			</div>
+			<div class="export">©聚众科技 | 服务热线：400-6129-589</div>
+		</div>
+		<!--实物奖励页面-->
+		<div class="page" id="page5">
+			<div class="tip">
+				<h2>恭喜！</h2>
+				<h2>获得实物奖励！请点击礼盒！</h2>
+			</div>
+			<div class="export">©聚众科技 | 服务热线：400-6129-589</div>
+		</div>
+		<!--没中奖页面-->
+		<div class="page" id="page6">
+			<div class="tip2">
+				<h2>真可惜！</h2>
+				<h2>啥都没摇到！</h2>
+			</div>
+			<div class="export">©聚众科技 | 服务热线：400-6129-589</div>
+		</div>
+		<!--结束页面-->
+		<div class="page" id="endPage">
+		<div class="wrap">
+			<div id="viewReward" class="endButton">查看奖励</div>
+			<div id="quit" class="endButton">退出</div>
+		</div>
+		<div class="export">©聚众科技 | 服务热线：400-6129-589</div>
+	</div>
+	<div class="endopacity">
+	</div>
+	<div class="endwindows">
+		<div class="endClose">
+			<img  src="http://pic.sxjzcm.cn/o_1aubr60q31n401h1r1o5776g1rjl9.png?imageView2/4/w/1720/h/1080/q/70"/>
+		</div>
+		<div class="listContainer"></div>
+    </div>
+	
+		<!--二维码页面-->
+		<!--<div class="page" id="codePage">
+			<div class="opacity"></div>
+	<div class="windows">
+		<img id="code" alt="" src="http://pic.sxjzcm.cn/o_1aj11085u7841dro1svp7bnti19.jpg?imageView2/4/w/568/h/320/q/100"/>
+		<div class="codetext1">
+			<h3>长按上图识别二维码关注我们<br>随时随地获取福利信息</h3>
+		</div>
+	</div>
+	<div class="export">©聚众科技</div>
+		</div>-->
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js" ></script>
+		<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/sweetalert.min.js" ></script>
+		<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+		<script type="text/javascript" src="js/getParam.js" ></script>
+		<script type="text/javascript" src="js/newPage.js" ></script>
+		<script type="text/javascript" src="js/test.js" ></script>
+        <script>
+        	var GLOBAL = {};
+        	GLOBAL.keywords = "";//兑换码
+        	GLOBAL.path = 'http://'+document.location.hostname+'/';
+        	GLOBAL.activity = {};//存储活动信息
+        	GLOBAL.flag = false;
+			GLOBAL.shakecheck = false;//是否处于摇的过程
+			//次数初始化（调试）
+			GLOBAL.times = 1;
+			GLOBAL.get = null;//摇的的具体奖励
+			GLOBAL.codecheck = false;
+			GLOBAL.record_id = null;
+			GLOBAL.p5_click = false;
+			GLOBAL.redpaperFlag = false;
+			GLOBAL.user = {};
+			GLOBAL.shareUrl = null;
+			GLOBAL.getCard = false;
+			GLOBAL.cardExt = null;
+        </script>
+	</body>
+</html>
